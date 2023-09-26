@@ -5,6 +5,7 @@ const heading = document.querySelector("h1");
 class Week {
   constructor() {
     this.maxTemp = [];
+    this.mydData = null;
   }
 
   async getData() {
@@ -13,6 +14,10 @@ class Week {
       { mode: "cors" }
     );
     const data = await response.json();
+    const location = data.location.name;
+
+    console.log(location);
+    console.log(data);
     return data;
   }
 
